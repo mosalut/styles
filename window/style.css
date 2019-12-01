@@ -1,0 +1,59 @@
+mosalut-window {
+	position: absolute;
+	display: block;
+	margin: 0px auto;
+	border: groove 2px #000000;
+	border-top: groove 2px #009657;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	user-select: none;
+	z-index: 1;
+}
+
+mosalut-window>header {
+	padding-left: 4px;
+	padding-right: 4px;
+	height: 32px;
+	line-height: 32px;
+	color: #009657;
+	background: linear-gradient(to top, #333333, #000000 80%, #ffffff);
+}
+
+mosalut-window>header>input {
+	position: absolute;
+	top: 0px;
+	z-index: 2;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	border: none;
+	outline: none;
+	color: #aaaaaa;
+	background-color: transparent;
+}
+
+mosalut-window>header>input:hover {
+	cursor: pointer;
+	color: #ffffff;
+}
+
+mosalut-window>header>#close {
+	right: 0px;
+	border-top-right-radius: 4px;
+}
+
+mosalut-window>header>#toggle {
+	right: 32px;
+}
+
+mosalut-window>section {
+	min-width: 200px;
+	height: 100px;
+	padding-top: 4px;
+	padding-left: 4px;
+	padding-right: 4px;
+	resize: both;
+	overflow: auto;
+	background-color: #333333;
+	color: #eeeeee;
+}
