@@ -1,22 +1,23 @@
 "use strict";
 
-function init() {
-	let imports = document.querySelectorAll('[rel="import"]');
+export function window_init() {
+	let imports = document.querySelectorAll('#mosalut-window[rel="import"]');
 	let ws;
 	for(let i = 0; i < imports.length; i++) {
-		let mWindow = imports[i].import.getElementById('window').content;
+		let component = imports[i].import.getElementById('component').content;
 		ws = document.getElementsByTagName('mosalut-window');
 		for(let j = 0; j < ws.length; j++) {
-			let clone = document.importNode(mWindow, true)
-			let text = ws[j].innerText;
+			let clone = document.importNode(component, true)
 			let title = ws[j].dataset.title;
+			let html = ws[j].innerHTML;
 			clone.querySelector('header>span').innerText = title;
-			clone.querySelector('section').innerText = text;
-			ws[j].innerText = '';
+			clone.querySelector('section').innerHTML = html;
+			ws[j].innerHTML = '';
 			ws[j].appendChild(clone);
 		}
 	}
 
+	/*
 	let movable = document.querySelectorAll(".movable");
 	for(let i = 0; i < movable.length; i++) {
 		let movebar = movable[i].getElementsByTagName('header')[0]; 
@@ -39,10 +40,5 @@ function init() {
 			moving = false;
 		}
 	}
+	*/
 }
-
-function main() {
-	init();
-}
-
-onload = main;
