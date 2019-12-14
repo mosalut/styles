@@ -1,0 +1,33 @@
+mosalut-menu {
+	margin: 0px auto;
+	display: block;
+	padding-right: 12%;
+	padding-left: 12%;
+	background: linear-gradient(to right, #009657 8%, #333333 10%, #333333 90%, #009657 92%);
+}
+
+.mosalut-x-menu, .mosalut-x-menu>section {
+	margin: 0px auto;
+	display: flex;
+	justify-content: space-between;
+	color: #009657;
+}
+
+mosalut-menuitem:first-child {
+	border-left: 1px solid #777777;
+}
+
+mosalut-menuitem {
+	display: block;
+	color: #009657;
+	cursor: pointer;
+	text-align: center;
+	width: 100px;
+	border-right: 1px solid #777777;
+	line-height: 64px;
+}
+
+mosalut-menuitem:hover {
+	color: #dddddd;
+	cursor: pointer;
+}
