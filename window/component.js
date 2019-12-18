@@ -17,28 +17,27 @@ export function window_init() {
 		}
 	}
 
-	/*
 	let movable = document.querySelectorAll(".movable");
 	for(let i = 0; i < movable.length; i++) {
 		let movebar = movable[i].getElementsByTagName('header')[0]; 
 		let x;
 		let y;
-		let moving = false;
+		let moving;
+		let startX;
+		let startY;
 		movebar.onmousedown = function(e) {
+			let that = this;
+			moving = true;
 			console.log(e.clientX, e.clientY)
-			moving = true
-		};
-		movable[i].onmousemove = function(e) {
-			console.log(this.style.left);
-			if(!moving) {
-				return;
+			document.onmousemove = function(e) {
+				if(moving) {
+					movable[i].style.top = e.clientY + (document.documentElement.scrollTop || document.body.scrollTop) - 15 + "px"; 
+					movable[i].style.left = e.clientX + (document.documentElement.scrollLeft || document.body.scrollLeft) - 15 + "px"; 
+					onmouseup = function() {
+						moving = false;
+					}
+				}
 			}
-			this.style.left = e.clientX + x + "px";
-			this.style.top = e.clientY + y + "px";
-		}
-		movebar.onmouseup = function(e) {
-			moving = false;
-		}
+		};
 	}
-	*/
 }

@@ -11,7 +11,6 @@ export function nav_init() {
 			let clone = document.importNode(menu, true)
 			let html = fs[j].innerHTML;
 			let title = fs[j].dataset.title;
-			console.log(title);
 			clone.querySelector("header>h4").innerHTML = title;
 			clone.querySelector("section").innerHTML = html;
 			fs[j].innerHTML = '';
